@@ -1,0 +1,8 @@
+﻿@page "/"
+
+@inject IJSRuntime JSRuntime
+
+
+<button onclick="@(this.JSRuntime.CopyTextToClipboardAsync("Copy foo"))">copy to clipboard button</button>
+
+<textarea/>

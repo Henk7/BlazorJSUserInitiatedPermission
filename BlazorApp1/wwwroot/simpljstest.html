@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>Title of the document</title>
+    <script src="jquery-3.4.1.js"></script>
+    <script src="clipboard-polyfill.js"></script>
+</head>
+
+<body>
+    <button>copy to clipboard</button>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("button").click(function() {
+                clipboard.writeText("foo1");
+                setTimeout(function() {
+                    clipboard.writeText("foo2"); // fails in general in firefox
+                }, 500);
+            });
+        });
+    </script>
+</body>
+
+</html>
